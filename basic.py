@@ -1,6 +1,7 @@
 import os
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
+from flask_migrate import Migrate # pip install Flask-Migrate
 ######################################
 #### SET UP OUR SQLite DATABASE #####
 ####################################
@@ -15,6 +16,7 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy(app)
 
+Migrate(app, db)
 #####################################
 ####################################
 ###################################
